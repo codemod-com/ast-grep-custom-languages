@@ -14,6 +14,9 @@ mod parser_implementation {
   pub fn language_c() -> TSLanguage {
     tree_sitter_c::LANGUAGE.into()
   }
+  pub fn language_angular() -> TSLanguage {
+    tree_sitter_angular::LANGUAGE.into()
+  }
   pub fn language_cpp() -> TSLanguage {
     tree_sitter_cpp::LANGUAGE.into()
   }

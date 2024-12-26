@@ -188,6 +188,7 @@ dependencies = [
  "ast-grep-core",
  "ignore",
  "serde",
+ "tree-sitter-angular-codemod",
  "tree-sitter-bash",
  "tree-sitter-c",
  "tree-sitter-c-sharp",
@@ -977,7 +978,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc2f4eb4bc735547cfed7c0a4922cbd04a4655978c09b54f1f7b228750664c34"
 dependencies = [
  "cfg-if",
- "windows-targets 0.48.5",
+ "windows-targets 0.52.6",
 ]
 
 [[package]]
@@ -1886,14 +1887,24 @@ dependencies = [
 
 [[package]]
 name = "tree-sitter"
-version = "0.24.4"
+version = "0.24.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b67baf55e7e1b6806063b1e51041069c90afff16afcbbccd278d899f9d84bca4"
+checksum = "8ac95b18f0f727aaaa012bd5179a1916706ee3ed071920fdbda738750b0c0bf5"
 dependencies = [
  "cc",
  "regex",
  "regex-syntax",
  "streaming-iterator",
+ "tree-sitter-language",
+]
+
+[[package]]
+name = "tree-sitter-angular-codemod"
+version = "0.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "08d2f32e07628c4579efc0b6f0b26f7fa1cd3d19c648d75e0f6f6b65d81dbd18"
+dependencies = [
+ "cc",
  "tree-sitter-language",
 ]
 

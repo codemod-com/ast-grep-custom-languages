@@ -1,4 +1,5 @@
 export enum Lang {
+  Angular = 'Angular',
   Html = 'Html',
   JavaScript = 'JavaScript',
   Tsx = 'Tsx',

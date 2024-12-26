@@ -184,6 +184,7 @@ impl_lang_expando!(Swift, language_swift, 'µ');
 
 // Stub Language without preprocessing
 // Language Name, tree-sitter-name, alias, extension
+impl_lang!(Angular, language_angular);
 impl_lang!(Bash, language_bash);
 impl_lang!(Java, language_java);
 impl_lang!(JavaScript, language_javascript);
@@ -200,6 +201,7 @@ impl_lang!(Yaml, language_yaml);
 /// Represents all built-in languages.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Hash)]
 pub enum SupportLang {
+  Angular,
   Bash,
   C,
   Cpp,
@@ -312,6 +314,7 @@ impl Visitor<'_> for AliasVisitor {
 }
 
 impl_aliases! {
+  Angular => &["angular"],
   Bash => &["bash"],
   C => &["c"],
   Cpp => &["cc", "c++", "cpp", "cxx"],
@@ -357,6 +360,7 @@ macro_rules! execute_lang_method {
   ($me: path, $method: ident, $($pname:tt),*) => {
     use SupportLang as S;
     match $me {
+      S::Angular => Angular.$method($($pname,)*),
       S::Bash => Bash.$method($($pname,)*),
       S::C => C.$method($($pname,)*),
       S::Cpp => Cpp.$method($($pname,)*),
@@ -420,6 +424,7 @@ impl Language for SupportLang {
 fn extensions(lang: SupportLang) -> &'static [&'static str] {
   use SupportLang::*;
   match lang {
+    Angular => &["angular"],
     Bash => &[
       "bash", "bats", "cgi", "command", "env", "fcgi", "ksh", "sh", "tmux", "tool", "zsh",
     ],

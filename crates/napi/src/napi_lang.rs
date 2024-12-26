@@ -13,6 +13,7 @@ use std::str::FromStr;
 #[napi(string_enum)]
 #[derive(PartialEq, Eq, Hash, Debug)]
 pub enum Lang {
+  Angular,
   Html,
   JavaScript,
   Tsx,
@@ -44,6 +45,7 @@ impl From<Lang> for SupportLang {
     use Lang as F;
     use SupportLang as S;
     match val {
+      F::Angular => S::Angular,
       F::Html => S::Html,
       F::JavaScript => S::JavaScript,
       F::Tsx => S::Tsx,
@@ -77,6 +79,7 @@ impl From<SupportLang> for Lang {
     use Lang as F;
     use SupportLang as S;
     match value {
+      S::Angular => F::Angular,
       S::Html => F::Html,
       S::JavaScript => F::JavaScript,
       S::Tsx => F::Tsx,
